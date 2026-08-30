@@ -1,0 +1,403 @@
+Build a complete production-ready GitHub Pages web application called:
+
+Healthy at 40 — Research & Symptom Atlas
+
+Repository:
+healthy-at-40-atlas
+
+OBJECTIVE
+Create an interactive educational health-research atlas that connects:
+
+1. A clickable original human body map
+2. Pain locations
+3. Body regions
+4. Trigger-point references
+5. Health interventions
+6. Possible contributing factors
+7. Evidence levels
+8. Safety information
+9. Research references
+
+IMPORTANT SAFETY/DATA RULES
+
+This is an educational research index, NOT a diagnostic or treatment system.
+
+Do NOT present any supplement, drug, SARM, peptide, device, food, herb, or behavioral intervention as guaranteed to treat a disease.
+
+Clearly distinguish:
+A = strong human evidence
+B = moderate human evidence
+C = limited/mixed human evidence
+D = primarily preclinical/experimental
+E = insufficient evidence
+
+Keep SARMs, Cardarine/GW501516, BPC-157 and other experimental compounds in a clearly separated "Experimental Research" section.
+
+Do not provide a dosing protocol for experimental compounds.
+
+Do not reproduce copyrighted Triggerpoints.net diagrams or proprietary material. Link to their original pages and provide attribution.
+
+BODY MAP
+
+Create an ORIGINAL SVG human anatomical navigation map.
+
+Provide:
+- FRONT
+- BACK
+
+Clickable regions:
+- Head/neck
+- Shoulder
+- Chest/ribs
+- Upper back
+- Arm/elbow
+- Forearm/hand
+- Abdomen
+- Low back
+- Pelvis/hip
+- Thigh/knee
+- Leg
+- Ankle/foot
+
+Clicking a region should filter the entire atlas to that body region.
+
+PAIN DATABASE
+
+Create searchable symptom entries including at minimum:
+
+- Headache
+- Neck pain
+- Shoulder pain
+- Upper back pain
+- Chest/rib pain
+- Arm pain
+- Elbow pain
+- Wrist/hand pain
+- Abdominal pain
+- Low back pain
+- Hip pain
+- Gluteal pain
+- Knee pain
+- Thigh pain
+- Calf pain
+- Shin pain
+- Ankle pain
+- Heel pain
+- Foot pain
+
+Each symptom should contain:
+
+- Name
+- Body region
+- Possible contributor categories
+- Trigger-point reference
+- Related interventions
+- Safety/red flags
+- Research references
+
+POSSIBLE CONTRIBUTOR CATEGORIES
+
+Create separate, clickable categories:
+
+1. Biomechanical / musculoskeletal
+2. Myofascial / trigger-point pattern
+3. Nutrition / food / GI
+4. Neurological
+5. Systemic / medical
+6. Genetic / inherited
+
+IMPORTANT:
+The interface must say that these are possible contributors/hypotheses and not diagnoses.
+
+INTERVENTION DATABASE
+
+Include:
+
+GI / MICROBIOME
+- Bacillus subtilis HU58
+- Fiber/prebiotic concepts
+- Dr. Christopher's Lower Bowel Formula
+
+NUTRITION
+- Vitamin B12
+
+BOTANICALS
+- Milk thistle / silymarin
+- Panax ginseng
+- Ashwagandha
+- Rhodiola
+- Other adaptogens as a clearly expandable category
+
+FOOD / PHYTOCHEMICALS
+- Garlic
+- Green tea
+
+MIND / BEHAVIOR
+- Positive psychology
+- Visualization
+- Classical music / music relaxation
+- Slow/diaphragmatic breathing
+- Other breathing techniques
+
+RECOVERY / MANUAL
+- Massage
+- Foam rolling
+- Mobility
+- Stretching
+
+DEVICES
+- Red/NIR photobiomodulation
+- TENS
+- EMS/NMES
+- Heat
+- Cold
+- Percussive massage
+- Compression
+- Sauna
+- Vibration
+- Other recovery devices
+
+EXPERIMENTAL
+- Andarine / S-4
+- Ostarine / MK-2866 / Enobosarm
+- Ligandrol / LGD-4033
+- RAD-140 / Testolone
+- S-23
+- YK-11
+- Cardarine / GW501516
+- MK-677 / Ibutamoren
+- BPC-157
+- Other SARMs/experimental compounds as an expandable category
+
+IMPORTANT:
+Cardarine is NOT a SARM. Identify it correctly as an experimental PPAR-delta agonist.
+
+BPC-157 should be identified as experimental/preclinical with limited human evidence.
+
+For SARMs and experimental compounds, emphasize their unapproved/experimental status and safety uncertainty.
+
+DATA STRUCTURE
+
+Keep content separate from presentation.
+
+Create:
+
+data/
+  regions.json
+  symptoms.json
+  causes.json
+  interventions.json
+  muscles.json
+  references.json
+  red-flags.json
+
+Each intervention should have:
+
+id
+name
+category
+tags
+function
+mechanism
+conditions
+evidence
+humanEvidence
+preclinicalEvidence
+safety
+interactions
+contraindications
+bodyRegions
+relatedSymptoms
+sources
+lastReviewed
+
+Each symptom should have:
+
+id
+name
+region
+possibleCauses
+triggerPointReferences
+relatedInterventions
+redFlags
+sources
+
+TRIGGERPOINTS.NET
+
+Use the following as external references:
+
+https://www.triggerpoints.net/
+https://www.triggerpoints.net/all-muscles
+https://www.triggerpoints.net/all-symptom-regions
+
+Link to appropriate pages whenever possible.
+
+Do NOT copy their images.
+
+Create an attribution statement:
+
+"Trigger-point references link to Triggerpoints.net. This project does not reproduce their proprietary diagrams or content."
+
+SEARCH
+
+Implement global search that searches:
+
+- Symptoms
+- Body regions
+- Interventions
+- Conditions
+- Tags
+- Causes
+- Muscles
+
+FILTERS
+
+Add:
+
+Body part
+Pain location
+Topic
+Intervention category
+Evidence level
+Contributor category
+
+INTERFACE
+
+Create a modern responsive interface.
+
+Desktop:
+Two-column layout:
+left = interactive body
+right = research results
+
+Mobile:
+body map above results.
+
+Use cards and expandable sections.
+
+Every card should clearly display evidence level.
+
+Use visual labels:
+
+A Strong
+B Moderate
+C Limited/Mixed
+D Preclinical/Experimental
+E Insufficient
+
+SAFETY
+
+Create a persistent disclaimer.
+
+Create a red-flag system for symptoms such as:
+
+- sudden severe headache
+- chest pain
+- difficulty breathing
+- new neurological weakness
+- rapidly progressing numbness
+- severe unexplained abdominal pain
+- major trauma
+- fever with severe pain
+- new bowel/bladder dysfunction
+- rapidly worsening neurological symptoms
+
+When applicable display:
+
+"These symptoms can have causes requiring medical evaluation. Do not assume a musculoskeletal, nutritional, or trigger-point cause."
+
+HEALTHY AT 40
+
+Create a separate "Foundations" dashboard emphasizing:
+
+- sleep
+- nutrition
+- adequate protein
+- hydration
+- physical activity
+- strength
+- cardiovascular fitness
+- mobility
+- stress management
+- preventive healthcare
+
+Do NOT present experimental compounds as foundational health practices.
+
+FACEBOOK
+
+Create:
+
+facebook/page-copy.md
+
+Include:
+
+Page name:
+Healthy at 40 — Research Atlas
+
+Short bio.
+
+Pinned-post copy.
+
+Several sample educational posts that point users to the GitHub Pages atlas.
+
+GITHUB PAGES
+
+Configure GitHub Actions for automatic deployment.
+
+Create:
+
+.github/workflows/deploy.yml
+
+The workflow should deploy the static site whenever main changes.
+
+README
+
+Document:
+
+- Project purpose
+- Disclaimer
+- Data architecture
+- Evidence grading
+- Triggerpoints.net attribution
+- Local development
+- GitHub Pages deployment
+- How to add a new intervention
+- How to add a new symptom
+- How to add a new body region
+- How to add references
+
+QUALITY CONTROL
+
+Do not invent clinical evidence.
+
+For every factual health claim provide a source.
+
+Prefer:
+- NIH
+- FDA
+- CDC
+- peer-reviewed PubMed literature
+- NCCIH
+- WADA where relevant
+
+Clearly distinguish:
+human clinical evidence
+animal evidence
+in-vitro evidence
+mechanistic hypotheses
+
+Add "last reviewed" dates to research records.
+
+Make the site functional with no external framework requirement if possible. Plain HTML/CSS/JavaScript is preferred for GitHub Pages.
+
+Before finishing:
+1. Test all navigation.
+2. Test body-map clicks.
+3. Test search.
+4. Test filters.
+5. Test external links.
+6. Test mobile layout.
+7. Validate JSON.
+8. Confirm GitHub Pages workflow is valid.
+9. Update README.
+10. Commit all changes to main.
